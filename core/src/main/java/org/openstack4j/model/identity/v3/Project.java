@@ -1,5 +1,6 @@
 package org.openstack4j.model.identity.v3;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openstack4j.common.Buildable;
@@ -77,4 +78,11 @@ public interface Project extends ModelEntity, Buildable<ProjectBuilder> {
      * @return value for the given key
      */
     String getExtra(String key);
+
+    /**
+     * Identity 3.9 Introduced project tags
+     *
+     * @return tags list
+     */
+    List<String> getTags();
 }

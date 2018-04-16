@@ -1,5 +1,6 @@
 package org.openstack4j.model.identity.v3.builder;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openstack4j.common.Buildable.Builder;
@@ -76,4 +77,11 @@ public interface ProjectBuilder extends Builder<ProjectBuilder, Project> {
      * @see Project#getExtra(String)
      */
     ProjectBuilder setExtra(String name, String value);
+
+
+    /**
+     *
+     * @see Project#getTags()
+     */
+    ProjectBuilder tags(List<String> tags);
 }

@@ -31,7 +31,7 @@ public class ApplicationCredentialServiceImpl extends BaseOpenStackService imple
     @Override
     public List<? extends ApplicationCredential> list(String userId) {
         checkNotNull(userId);
-        return get(KeystoneApplicationCredential.ApplicationCredentials.class, PATH_USERS, PATH_APPLICATION_CREDENTIALS)
+        return get(KeystoneApplicationCredential.ApplicationCredentials.class, PATH_USERS, "/", userId, PATH_APPLICATION_CREDENTIALS)
                 .execute().getList();
     }
 

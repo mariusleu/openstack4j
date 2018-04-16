@@ -246,7 +246,10 @@ public class KeystoneAuth implements Authentication, AuthStore {
 
             private static final long serialVersionUID = 1L;
 
+            @JsonProperty
             private String id;
+
+            @JsonProperty
             private String secret;
 
             public AuthApplicationCredential(String id, String secret) {
@@ -254,6 +257,8 @@ public class KeystoneAuth implements Authentication, AuthStore {
                 this.secret = secret;
             }
 
+            public AuthApplicationCredential() {
+            }
 
             @Override
             public String getId() {

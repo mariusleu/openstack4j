@@ -41,6 +41,7 @@ public class KeystoneProject implements Project {
     private String parents;
     private Boolean enabled = true;
     private Map<String, String> extra = new HashMap<String, String>();
+    private List<String> tags;
 
     /**
      * @return the Project builder
@@ -151,6 +152,14 @@ public class KeystoneProject implements Project {
      */
     public String getExtra(String key) {
         return extra.get(key);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<String> getTags() {
+        return tags;
     }
 
     @JsonAnyGetter
@@ -323,6 +332,15 @@ public class KeystoneProject implements Project {
         @Override
         public ProjectBuilder setExtra(String key, String value) {
             model.extra.put(key, value);
+            return this;
+        }
+
+        /**
+         * @see KeystoneProject#getTags()
+         */
+        @Override
+        public ProjectBuilder tags(List<String> tags) {
+            model.tags = tags;
             return this;
         }
 
