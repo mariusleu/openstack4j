@@ -34,7 +34,7 @@ public class NovaServer implements Server {
 	public String name;
 	public NovaAddresses addresses;
 	public List<GenericLink> links;
-	public Object image;
+	public NovaImage image;
 	public NovaFlavor flavor;
 	public String accessIPv4;
 	public String accessIPv6;
@@ -117,16 +117,7 @@ public class NovaServer implements Server {
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Image getImage() {
-		if (image instanceof LinkedHashMap) {
-			LinkedHashMap map = (LinkedHashMap) image;
-			String imageId = (String) map.get("id");
-			if (imageId == null || imageId.isEmpty()) {
-				return null;
-			}
-			NovaImage novaImage = (NovaImage) Apis.getComputeServices().images().get(imageId);
-			return novaImage;
-		}
-		return null;
+		return image;
 	}
 
 	@JsonIgnore
@@ -137,8 +128,6 @@ public class NovaServer implements Server {
 
 	@Override
 	public Flavor getFlavor() {
-		if (flavor != null && flavor.getName() == null)
-			flavor = (NovaFlavor) Apis.getComputeServices().flavors().get(flavor.getId());
 		return flavor;
 	}
 

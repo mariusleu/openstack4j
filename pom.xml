@@ -283,12 +283,12 @@
 
     <distributionManagement>
         <repository>
-            <id>acvile.archiva</id>
+            <id>acvile.archiva.internal</id>
             <name>Internal Release Repository</name>
             <url>https://archiva.acvile.com/repository/internal</url>
         </repository>
         <snapshotRepository>
-            <id>acvile.archiva</id>
+            <id>acvile.archiva.snapshots</id>
             <name>Internal Snapshots Repository</name>
             <url>https://archiva.acvile.com/repository/snapshots</url>
         </snapshotRepository>
