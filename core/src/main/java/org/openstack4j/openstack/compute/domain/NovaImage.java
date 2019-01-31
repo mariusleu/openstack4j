@@ -160,6 +160,50 @@ public class NovaImage implements Image {
 						.toString();
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setProgress(int progress) {
+		this.progress = progress;
+	}
+
+	public void setMinRam(int minRam) {
+		this.minRam = minRam;
+	}
+
+	public void setMinDisk(int minDisk) {
+		this.minDisk = minDisk;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
+	public void setSize(long size) {
+		this.size = size;
+	}
+
+	public void setLinks(List<GenericLink> links) {
+		this.links = links;
+	}
+
+	public void setMetadata(Map<String, Object> metadata) {
+		this.metadata = metadata;
+	}
+
 	public static class NovaImages extends ListResult<NovaImage> {
 
 		private static final long serialVersionUID = 1L;

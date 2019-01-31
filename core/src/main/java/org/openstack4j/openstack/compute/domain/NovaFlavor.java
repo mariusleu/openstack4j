@@ -26,6 +26,8 @@ public class NovaFlavor implements Flavor {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
+	@JsonProperty("original_name")
+	private String originalName;
 	private String name;
 	private Integer ram;
 	private Integer vcpus;
@@ -175,6 +177,14 @@ public class NovaFlavor implements Flavor {
 						.add("rxtx_quota", rxtxQuota).add("rxtx_cap", rxtxCap).add("is_public", isPublic)
 						.add("links", links).addValue("\n")
 						.toString();
+	}
+
+	public String getOriginalName() {
+		return originalName;
+	}
+
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
 	}
 
 	public static class Flavors extends ListResult<NovaFlavor> {
